@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feliz 30 de Septiembre</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #0c2e1d, #1e5631);
+      color: #d0f0d0;
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .btn {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 14px 36px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn:hover {
+      background: #388e3c;
+      transform: scale(1.05);
+    }
+    #music {
+      margin-top: 30px;
+      width: 90%;
+      max-width: 500px;
+      display: none;
+    }
+    footer {
+      margin-top: 40px;
+      color: #a0d6a0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Feliz 30 de septiembre ❤!</h1>
+  <button class="btn" onclick="playMusic()">Apreta aquí</button>
+
+  <div id="music">
+    <iframe 
+      width="100%" 
+      height="120" 
+      src="https://www.youtube.com/embed/8G3FkYQx4uY?autoplay=1&mute=0&loop=0&enablejsapi=1" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <footer>
+    🚗 Día de regalar Hot Wheels — Porque los hombres también merecen un detalle.
+  </footer>
+
+  <script>
+    function playMusic() {
+      document.getElementById('music').style.display = 'block';
+      // En algunos navegadores, esto ayuda a garantizar el sonido tras interacción
+      const iframe = document.querySelector('#music iframe');
+      iframe.src = iframe.src.replace('mute=1', 'mute=0');
+    }
+  </script>
+</body>
+</html>
